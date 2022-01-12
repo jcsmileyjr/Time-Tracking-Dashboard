@@ -27,13 +27,110 @@
 
     body {
       font-family: 'Rubik', sans-serif;
+      background-color: var(--Neutral-Very-dark-blue);
+      height: 100vh;
+      width: 100vw;      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
+    main {
+      width: 80%;
+      margin: auto;
+      background-color: white;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(8, 1fr);
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+      grid-template-areas:
+        "profile"
+        "work" 
+        "play"
+        "study"
+        "profile"
+        "exercise"
+        "social"
+        "selfCare";
+    }
+      
+    .dashboard {
+      min-width: 80vw;
+      margin: auto;
+      background-color: pink;
+    }
+    .profile {
+      grid-area: profile;
+      background-color: var(--Primary-Blue-Color);
+      height: 50px;
+    }
+
+    .work {
+      grid-area: work;
+      background-color: var(--Primary-Light-red-work);
+    }
+    .play {
+      grid-area:play;
+      background-color: var(--Primary-Soft-blue-play);
+    }
+    .study {
+      grid-area: study;
+      background-color: var(--Primary-Light-red-study);
+    }
+    .exercise {
+      grid-area: exercise;
+      background-color: var(--Primary-Lime-green-exercise);
+    }
+    .social {
+      grid-area: social;
+      background-color: var(--Primary-Violet-social);
+    }
+    .selfCare {
+      grid-area: selfCare;
+      background-color: var(--Primary-Soft-orange-selfcare);
+    }
+
+
+    @media only screen and (min-width: 600px) {
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      main {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        grid-template-areas:
+          "profile work play study"
+          "profile exercise social selfCare";
+      }
+
+      .dashboard {
+        min-width: 15vw;
+        min-height:25vh;
+        background-color: pink;
+      }
+
+      .profile {
+        grid-area: profile;
+        min-width: 15vw;
+        height: 100%;
+        background-color: var(--Primary-Blue-Color);
+      }
     }
   </style>
 </head>
 <body>
   <main>
-    <div class="profile__container"
+    <div class="profile">profile</div>
+    <div class="work dashboard">work</div>
+    <div class="play dashboard">play</div>
+    <div class="study dashboard">study</div>
+    <div class="exercise dashboard">exercise</div>
+    <div class="social dashboard">social</div>
+    <div class="selfCare dashboard">selfCare</div>
   </main>
 </body>
 </html>
