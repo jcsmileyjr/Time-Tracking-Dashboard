@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">  
-  <title>Frontend Mentor | Time tracking dashboard</title>
+  <title>Frontend Mentor | Time tracking dashboard--style</title>
   <style>
     :root {
       --Primary-Blue-Color: hsl(246, 80%, 60%);
@@ -32,7 +32,6 @@
 
     main {
       margin: 40px 10px;
-      background-color: white;
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: repeat(8, 1fr);
@@ -46,15 +45,23 @@
         "social"
         "selfCare";  
     }
+
+    .card--style {
+      border-radius: 10px;
+      border: none;
+      background-color: var(--Neutral-Dark-blue);
+    }
       
-    .dashboard {
+    .dashboard--style {
       
 
     }
     .profile {
       grid-area: profile;
+    }
+
+    .profile__image--container, .profile__name--container {
       background-color: var(--Primary-Blue-Color);
-  
     }
 
     .work {
@@ -91,6 +98,7 @@
         justify-content: center;
         align-items: center; 
       }
+
       main {
         width: 80%;
         margin: auto;
@@ -103,7 +111,7 @@
           "profile exercise social selfCare";
       }
 
-      .dashboard {
+      .dashboard--style {
         min-width: 15vw;
         min-height:25vh;
         background-color: pink;
@@ -120,13 +128,96 @@
 </head>
 <body>
   <main>
-    <div class="profile">profile</div>
-    <div class="work dashboard">work</div>
-    <div class="play dashboard">play</div>
-    <div class="study dashboard">study</div>
-    <div class="exercise dashboard">exercise</div>
-    <div class="social dashboard">social</div>
-    <div class="selfCare dashboard">selfCare</div>
+    <section class="profile card--style">
+      <div class="profile__header--container">
+        <div class="profile__image--container">
+          <img class="image--style" src="images/image-jeremy.png" alt="young african american male" />
+        </div>
+        <div class="profile__name--container">
+          <p class="name__top--style">Report for</p>
+          <h1 class="name__bottom--style">Jeremy Robson</h1>
+        </div>
+      </div>
+      <div class="profile__time--container">
+        <ul class="time--container">
+          <li>Daily</li>
+          <li>Weekly</li>
+          <li>Monthly</li>
+        </ul>
+      </div>
+    </section>
+    <section class="work dashboard--style card--style">
+      <div class="dashboard__inner--container">
+        <div class="dashboard__top--container">
+          <h2>Work</h2>
+          <img class="dashboard__image--style" src="images/icon-ellipsis.svg" alt="three dots" />
+        </div>
+        <div class="dashboard__bottom--container">
+          <p>32hrs</p>
+          <p>Last Week Previous - 36hrs</p>
+        </div>
+      </div>
+    </section>
+    <section class="play dashboard--style card--style">
+      <div class="dashboard__inner--container">
+        <div class="dashboard__top--container">
+          <h2>Play</h2>
+          <img class="dashboard__image--style" src="images/icon-ellipsis.svg" alt="three dots" />
+        </div>
+        <div class="dashboard__bottom--container">
+          <p>10hrs</p>
+          <p>Last Week Previous - 8hrs</p>
+        </div>
+      </div>
+    </section>
+    <section class="study dashboard--style card--style">
+      <div class="dashboard__inner--container">
+        <div class="dashboard__top--container">
+          <h2>Study</h2>
+          <img class="dashboard__image--style" src="images/icon-ellipsis.svg" alt="three dots" />
+        </div>
+        <div class="dashboard__bottom--container">
+          <p>4hrs</p>
+          <p>Last Week Previous - 7hrs</p>
+        </div>
+      </div>
+    </section>
+    <section class="exercise dashboard--style card--style">
+      <div class="dashboard__inner--container">
+        <div class="dashboard__top--container">
+          <h2>Exercise</h2>
+          <img class="dashboard__image--style" src="images/icon-ellipsis.svg" alt="three dots" />
+        </div>
+        <div class="dashboard__bottom--container">
+          <p>4hrs</p>
+          <p>Last Week Previous - 5hrs</p>
+        </div>
+      </div>
+    </section>
+    <section class="social dashboard--style card--style">
+      <div class="dashboard__inner--container">
+        <div class="dashboard__top--container">
+          <h2>Social</h2>
+          <img class="dashboard__image--style" src="images/icon-ellipsis.svg" alt="three dots" />
+        </div>
+        <div class="dashboard__bottom--container">
+          <p>5hrs</p>
+          <p>Last Week Previous - 10hrs</p>
+        </div>
+      </div>
+    </section>
+    <section class="selfCare dashboard--style card--style">
+      <div class="dashboard__inner--container">
+        <div class="dashboard__top--container">
+          <h2>Self Care</h2>
+          <img class="dashboard__image--style" src="images/icon-ellipsis.svg" alt="three dots" />
+        </div>
+        <div class="dashboard__bottom--container">
+          <p>2hrs</p>
+          <p>Last Week Previous - 2hrs</p>
+        </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>

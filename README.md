@@ -1,11 +1,6 @@
-Report for
-Jeremy Robson
 
-Daily
-Weekly
-Monthly
 
-Work
+
 5hrs <!-- daily -->
 Previous - 7hrs <!-- daily -->
 32hrs <!-- weekly -->
