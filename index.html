@@ -28,41 +28,33 @@
     body {
       font-family: 'Rubik', sans-serif;
       background-color: var(--Neutral-Very-dark-blue);
-      height: 100vh;
-      width: 100vw;      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
     main {
-      width: 80%;
-      margin: auto;
+      margin: 40px 10px;
       background-color: white;
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: repeat(8, 1fr);
-      grid-column-gap: 10px;
       grid-row-gap: 10px;
       grid-template-areas:
         "profile"
-        "work" 
+        "work"
         "play"
         "study"
-        "profile"
         "exercise"
         "social"
-        "selfCare";
+        "selfCare";  
     }
       
     .dashboard {
-      min-width: 80vw;
-      margin: auto;
-      background-color: pink;
+      
+
     }
     .profile {
       grid-area: profile;
       background-color: var(--Primary-Blue-Color);
-      height: 50px;
+  
     }
 
     .work {
@@ -93,11 +85,15 @@
 
     @media only screen and (min-width: 600px) {
       body {
+        height: 100vh;
+        width: 100vw;      
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: center; 
       }
       main {
+        width: 80%;
+        margin: auto;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 1fr);
         grid-column-gap: 10px;
