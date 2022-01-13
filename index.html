@@ -36,7 +36,7 @@
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: repeat(8, 1fr);
-      grid-row-gap: 10px;
+      /* grid-row-gap: 10px; */
       grid-template-areas:
         "profile"
         "work"
@@ -63,7 +63,7 @@
     }
       
     .dashboard__inner--container {
-      padding-bottom: 20px;
+      /* padding-bottom: 20px; */
       border-radius: 15px;
       background-color: var(--Neutral-Dark-blue);
     }
@@ -185,7 +185,7 @@
     }
 
 
-    @media only screen and (min-width: 600px) {
+    @media only screen and (min-width: 700px) {
       body {
         height: 100vh;
         width: 100vw;      
@@ -207,16 +207,62 @@
       }
 
       .dashboard--style {
-        min-width: 15vw;
+        min-width: 19vw;
         min-height:25vh;
         background-color: pink;
+        display: flex;
+      }
+
+      .dashboard__inner--container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
       }
 
       .profile {
         grid-area: profile;
-        min-width: 15vw;
+        min-width: 19vw;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .dashboard__bottom--container{
+        display: block;
+      }
+      
+      .hours, .name__bottom--style {
+        font-size: 3vw;
+      }
+      
+      .profile__header--container {
         background-color: var(--Primary-Blue-Color);
+        flex-direction: column;
+        flex: 1.5;
+        border-radius: 15px;
+        padding-left: 20px;
+      }
+
+      .profile__image--container {
+        justify-content: flex-start;
+      }
+
+      .profile__image--style {
+        min-width: 30%;
+      }
+
+      .time--container {
+        flex-direction: column;
+      }
+      
+      .profile__time--container {
+        flex: 1;
+        display: flex;
+        background-color: var(--Neutral-Dark-blue);
+        padding-left: 20px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
       }
     }
   </style>
@@ -249,7 +295,7 @@
         </div>
         <div class="dashboard__bottom--container">
           <p class="hours">32hrs</p>
-          <p>Last Week Previous - 36hrs</p>
+          <p>Last Week  - 36hrs</p>
         </div>
       </div>
     </section>
@@ -261,7 +307,7 @@
         </div>
         <div class="dashboard__bottom--container">
           <p class="hours">10hrs</p>
-          <p>Last Week Previous - 8hrs</p>
+          <p>Last Week  - 8hrs</p>
         </div>
       </div>
     </section>
@@ -273,7 +319,7 @@
         </div>
         <div class="dashboard__bottom--container">
           <p class="hours">4hrs</p>
-          <p>Last Week Previous - 7hrs</p>
+          <p>Last Week  - 7hrs</p>
         </div>
       </div>
     </section>
@@ -285,7 +331,7 @@
         </div>
         <div class="dashboard__bottom--container">
           <p class="hours">4hrs</p>
-          <p>Last Week Previous - 5hrs</p>
+          <p>Last Week  - 5hrs</p>
         </div>
       </div>
     </section>
@@ -297,7 +343,7 @@
         </div>
         <div class="dashboard__bottom--container">
           <p class="hours">5hrs</p>
-          <p>Last Week Previous - 10hrs</p>
+          <p>Last Week  - 10hrs</p>
         </div>
       </div>
     </section>
@@ -309,7 +355,7 @@
         </div>
         <div class="dashboard__bottom--container">
           <p class="hours">2hrs</p>
-          <p>Last Week Previous - 2hrs</p>
+          <p>Last Week  - 2hrs</p>
         </div>
       </div>
     </section>
