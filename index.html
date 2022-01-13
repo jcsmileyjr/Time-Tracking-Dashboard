@@ -28,10 +28,11 @@
     body {
       font-family: 'Rubik', sans-serif;
       background-color: var(--Neutral-Very-dark-blue);
+      margin: 0;
     }
 
     main {
-      margin: 40px 10px;
+      margin: 40px 0;
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: repeat(8, 1fr);
@@ -50,6 +51,10 @@
       border-radius: 10px;
       border: none;
       background-color: var(--Neutral-Dark-blue);
+      min-width: 220px;
+      max-width: 335px;
+      width: 90%;
+      margin: auto;
     }
       
     .dashboard--style {
@@ -60,8 +65,56 @@
       grid-area: profile;
     }
 
-    .profile__image--container, .profile__name--container {
+    .profile__header--container {
       background-color: var(--Primary-Blue-Color);
+      display: flex;
+      padding: 10px 0;
+      border-radius: 10px;
+    }
+
+    .profile__image--container {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-right: 10px;
+    }
+
+    .profile__image--style {
+      min-width: 50%;
+      max-width: 40px;
+      border: 3px solid white;
+      border-radius: 30px;
+    }
+
+    .profile__name--container{
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .name__top--style {
+      color: var(--Neutral-Desaturated-blue);
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+
+    .name__bottom--style {
+      color: var(--Neutral-Pale-Blue);
+      margin-top: 0;
+      font-size: 1.125rem;
+    }
+
+    .time--container {
+      display: flex;
+      justify-content: space-evenly;
+      list-style-type: none;
+      color: var(--Neutral-Desaturated-blue);
+      padding: 0;
+    }
+
+    .time--highlight {
+      color: var(--Neutral-Pale-Blue);
     }
 
     .work {
@@ -131,7 +184,7 @@
     <section class="profile card--style">
       <div class="profile__header--container">
         <div class="profile__image--container">
-          <img class="image--style" src="images/image-jeremy.png" alt="young african american male" />
+          <img class="profile__image--style" src="images/image-jeremy.png" alt="young african american male" />
         </div>
         <div class="profile__name--container">
           <p class="name__top--style">Report for</p>
@@ -141,7 +194,7 @@
       <div class="profile__time--container">
         <ul class="time--container">
           <li>Daily</li>
-          <li>Weekly</li>
+          <li class="time--highlight">Weekly</li>
           <li>Monthly</li>
         </ul>
       </div>
