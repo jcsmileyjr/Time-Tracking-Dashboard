@@ -77,8 +77,15 @@
     p {
       margin-top: 5px;
     }
+
+    .dashboard__outer--container1 {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 20px;
+    }
+
     .dashboard__inner--container {
-      margin-top: 20px;
+      margin-top: 38px;
     }
 
     .dashboard__top--container, .dashboard__bottom--container {
@@ -156,27 +163,45 @@
 
     .work {
       grid-area: work;
-      background-image: linear-gradient(var(--Primary-Light-red-work), var(--Neutral-Dark-blue));
+      background-image: url("images/icon-work.svg");
+      background-image: url("images/icon-work.svg"), linear-gradient(var(--Primary-Light-red-work) 50%, var(--Neutral-Dark-blue));
+      background-repeat: no-repeat;
+      background-position: right top;
     }
     .play {
       grid-area:play;
-      background-image: linear-gradient(var(--Primary-Soft-blue-play), var(--Neutral-Dark-blue));
+      background-image: url("images/icon-play.svg");
+      background-image: url("images/icon-play.svg"), linear-gradient(var(--Primary-Soft-blue-play) 50%, var(--Neutral-Dark-blue));
+      background-repeat: no-repeat;
+      background-position: right top;
     }
     .study {
       grid-area: study;
-      background-image: linear-gradient(var(--Primary-Light-red-study), var(--Neutral-Dark-blue));
+      background-image: url("images/icon-study.svg");
+      background-image: url("images/icon-study.svg"), linear-gradient(var(--Primary-Light-red-study) 50%, var(--Neutral-Dark-blue));
+      background-repeat: no-repeat;
+      background-position: right top;
     }
     .exercise {
       grid-area: exercise;
-      background-image: linear-gradient(var(--Primary-Lime-green-exercise), var(--Neutral-Dark-blue));
+      background-image: url("images/icon-exercise.svg");
+      background-image: url("images/icon-exercise.svg"), linear-gradient(var(--Primary-Lime-green-exercise) 50%, var(--Neutral-Dark-blue));
+      background-repeat: no-repeat;
+      background-position: right top;
     }
     .social {
       grid-area: social;
-      background-image: linear-gradient(var(--Primary-Violet-social), var(--Neutral-Dark-blue));
+      background-image: url("images/icon-social.svg");
+      background-image: url("images/icon-social.svg"), linear-gradient(var(--Primary-Violet-social) 50%, var(--Neutral-Dark-blue));
+      background-repeat: no-repeat;
+      background-position: right top;
     }
     .selfCare {
       grid-area: selfCare;
-      background-image: linear-gradient(var(--Primary-Soft-orange-selfcare), var(--Neutral-Dark-blue));
+      background-image: url("images/icon-self-care.svg");
+      background-image: url("images/icon-self-care.svg"), linear-gradient(var(--Primary-Soft-orange-selfcare) 50%, var(--Neutral-Dark-blue));
+      background-repeat: no-repeat;
+      background-position: right top;
     }
 
 
@@ -287,6 +312,9 @@
       </div>
     </section>
     <section class="work dashboard--style card--style">
+      <!-- <div class="dashboard__outer--container">
+        <img src="images/icon-work.svg" alt="" />
+      </div> -->
       <div class="dashboard__inner--container">
         <div class="dashboard__top--container">
           <h2>Work</h2>
