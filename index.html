@@ -56,11 +56,51 @@
       width: 90%;
       margin: auto;
     }
-      
-    .dashboard--style {
-      
 
+    .dashboard--style {
+      /* display: flex;
+      align-items: flex-end; */
     }
+      
+    .dashboard__inner--container {
+      padding-bottom: 20px;
+      border-radius: 15px;
+      background-color: var(--Neutral-Dark-blue);
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: 1.125rem;
+      color: var(--Neutral-Pale-Blue);
+    }
+
+    .hours {
+      font-size: 1.125rem;
+      color: var(--Neutral-Pale-Blue);
+    }
+
+    p {
+      margin-top: 5px;
+    }
+    .dashboard__inner--container {
+      margin-top: 20px;
+    }
+
+    .dashboard__top--container, .dashboard__bottom--container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 25px;
+    }
+    
+    .dashboard__top--container {
+      color: var(--Neutral-Pale-Blue);
+    }
+
+    .dashboard__bottom--container {
+      color: var(--Neutral-Desaturated-blue);
+    }
+
     .profile {
       grid-area: profile;
     }
@@ -117,29 +157,31 @@
       color: var(--Neutral-Pale-Blue);
     }
 
+    
+
     .work {
       grid-area: work;
-      background-color: var(--Primary-Light-red-work);
+      background-image: linear-gradient(var(--Primary-Light-red-work), var(--Neutral-Dark-blue));
     }
     .play {
       grid-area:play;
-      background-color: var(--Primary-Soft-blue-play);
+      background-image: linear-gradient(var(--Primary-Soft-blue-play), var(--Neutral-Dark-blue));
     }
     .study {
       grid-area: study;
-      background-color: var(--Primary-Light-red-study);
+      background-image: linear-gradient(var(--Primary-Light-red-study), var(--Neutral-Dark-blue));
     }
     .exercise {
       grid-area: exercise;
-      background-color: var(--Primary-Lime-green-exercise);
+      background-image: linear-gradient(var(--Primary-Lime-green-exercise), var(--Neutral-Dark-blue));
     }
     .social {
       grid-area: social;
-      background-color: var(--Primary-Violet-social);
+      background-image: linear-gradient(var(--Primary-Violet-social), var(--Neutral-Dark-blue));
     }
     .selfCare {
       grid-area: selfCare;
-      background-color: var(--Primary-Soft-orange-selfcare);
+      background-image: linear-gradient(var(--Primary-Soft-orange-selfcare), var(--Neutral-Dark-blue));
     }
 
 
@@ -206,7 +248,7 @@
           <img class="dashboard__image--style" src="images/icon-ellipsis.svg" alt="three dots" />
         </div>
         <div class="dashboard__bottom--container">
-          <p>32hrs</p>
+          <p class="hours">32hrs</p>
           <p>Last Week Previous - 36hrs</p>
         </div>
       </div>
@@ -218,7 +260,7 @@
           <img class="dashboard__image--style" src="images/icon-ellipsis.svg" alt="three dots" />
         </div>
         <div class="dashboard__bottom--container">
-          <p>10hrs</p>
+          <p class="hours">10hrs</p>
           <p>Last Week Previous - 8hrs</p>
         </div>
       </div>
@@ -230,7 +272,7 @@
           <img class="dashboard__image--style" src="images/icon-ellipsis.svg" alt="three dots" />
         </div>
         <div class="dashboard__bottom--container">
-          <p>4hrs</p>
+          <p class="hours">4hrs</p>
           <p>Last Week Previous - 7hrs</p>
         </div>
       </div>
@@ -242,7 +284,7 @@
           <img class="dashboard__image--style" src="images/icon-ellipsis.svg" alt="three dots" />
         </div>
         <div class="dashboard__bottom--container">
-          <p>4hrs</p>
+          <p class="hours">4hrs</p>
           <p>Last Week Previous - 5hrs</p>
         </div>
       </div>
@@ -254,7 +296,7 @@
           <img class="dashboard__image--style" src="images/icon-ellipsis.svg" alt="three dots" />
         </div>
         <div class="dashboard__bottom--container">
-          <p>5hrs</p>
+          <p class="hours">5hrs</p>
           <p>Last Week Previous - 10hrs</p>
         </div>
       </div>
@@ -266,7 +308,7 @@
           <img class="dashboard__image--style" src="images/icon-ellipsis.svg" alt="three dots" />
         </div>
         <div class="dashboard__bottom--container">
-          <p>2hrs</p>
+          <p class="hours">2hrs</p>
           <p>Last Week Previous - 2hrs</p>
         </div>
       </div>
