@@ -25,24 +25,21 @@
       </div>
       <div class="profile__time--container">
         <ul class="time--container">
-          <li>Daily</li>
-          <li class="time--highlight">Weekly</li>
-          <li>Monthly</li>
+          <li><button class="time__button-style" type="button" onclick="updateDashboards('daily')">Daily</button></li>
+          <li><button class="time__button-style time--highlight" type="button" onclick="updateDashboards('weekly')">Weekly</button></li>
+          <li><button class="time__button-style" type="button" onclick="updateDashboards('monthly')">Monthly</button></li>
         </ul>
       </div>
     </section>
     <section class="work dashboard--style card--style">
-      <!-- <div class="dashboard__outer--container">
-        <img src="images/icon-work.svg" alt="" />
-      </div> -->
       <div class="dashboard__inner--container">
         <div class="dashboard__top--container">
           <h2>Work</h2>
           <img class="dashboard__image--style" src="images/icon-ellipsis.svg" alt="three dots" />
         </div>
         <div class="dashboard__bottom--container">
-          <p class="hours">32hrs</p>
-          <p>Last Week  - 36hrs</p>
+          <p id="work-current" class="hours">32hrs</p>
+          <p id="work-previous">Last Week  - 36hrs</p>
         </div>
       </div>
     </section>
@@ -53,8 +50,8 @@
           <img class="dashboard__image--style" src="images/icon-ellipsis.svg" alt="three dots" />
         </div>
         <div class="dashboard__bottom--container">
-          <p class="hours">10hrs</p>
-          <p>Last Week  - 8hrs</p>
+          <p id="play-current" class="hours">10hrs</p>
+          <p id="play-previous">Last Week  - 8hrs</p>
         </div>
       </div>
     </section>
@@ -108,4 +105,56 @@
     </section>
   </main>
 </body>
+<script>
+  let currentTimeFrame = "weekly"
+  
+  const updateDashboards = (timeframe) => {
+    // Update the style
+
+    // Update the data in the UI
+    updateData(timeframe);
+  }
+  
+  const updateData = (timeframe) => {
+    fetch('./data.json')
+    .then(response => response.json())
+    .then(data => {distillData(data, timeframe)});
+  }
+  
+  //Within each object, I just want the title and timeframes's property that matches
+  const distillData = (data, timeframe) => {
+    let newDashboardDataPoint = {};
+    let newDashboardArray = [];
+    data.forEach(dataStream => {
+      newDashboardDataPoint.title = dataStream.title;
+      newDashboardDataPoint.timeslot = dataStream.timeframes[timeframe];
+      newDashboardArray.push(newDashboardDataPoint);
+      newDashboardDataPoint = {};
+    });
+    
+    updatePage(newDashboardArray);
+    console.log(newDashboardArray);
+    
+  }
+
+  // TODO: function that update each dashboards two different time data points with format "data hrs"
+  const updatePage = (data) => {
+    data.forEach((category)=> {
+      if(category.title === 'Work'){
+        console.log(category.timeslot)
+        document.getElementById('work-current').innerHTML = `${category.timeslot["current"]}hrs`;
+        document.getElementById('work-previous').innerHTML = `Last Week = ${category.timeslot["previous"]}hrs`;
+        return;
+      }
+      if(category.title === 'Play'){
+        console.log(category.timeslot)
+        document.getElementById('play-current').innerHTML = `${category.timeslot["current"]}hrs`;
+        document.getElementById('play-previous').innerHTML = `Last Week = ${category.timeslot["previous"]}hrs`;
+        return;
+      }
+
+    })
+  }
+  // TODO: function that highlight the current time frame button
+</script>
 </html>

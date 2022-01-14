@@ -153,10 +153,18 @@ p {
   cursor: pointer;
 }
 
+
+.time__button-style {
+    color: var(--Neutral-Desaturated-blue);
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    font-family: "Rubik", sans-serif;
+}
+
 .time--highlight {
   color: var(--Neutral-Pale-Blue);
 }
-
 .work {
   grid-area: work;
   background-image: url("images/icon-work.svg");
