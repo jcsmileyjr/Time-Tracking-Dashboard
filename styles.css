@@ -149,7 +149,7 @@ p {
   padding: 0;
 }
 
-.time--container li {
+.time--container button {
   cursor: pointer;
 }
 
@@ -164,6 +164,7 @@ p {
 
 .time--highlight {
   color: var(--Neutral-Pale-Blue);
+  cursor: pointer;
 }
 .work {
   grid-area: work;
