@@ -109,7 +109,8 @@
   let currentTimeFrame = "weekly"
   
   const updateDashboards = (timeframe) => {
-    // Update the style
+    //Update the format button's styling
+    highlightTimeFrame(timeframe); 
 
     // Update the data in the UI
     updateData(timeframe);
@@ -132,52 +133,56 @@
       newDashboardDataPoint = {};
     });
     
-    updatePage(newDashboardArray);
-    
+    updatePage(newDashboardArray, timeframe);    
   }
 
-  // TODO: function that update each dashboards two different time data points with format "data hrs"
+  // function that update each dashboards two different time data points with format "data hrs"
   const updatePage = (data) => {
     data.forEach((category)=> {
       if(category.title === 'Work'){
-        console.log(category.timeslot)
         document.getElementById('work-current').innerHTML = `${category.timeslot["current"]}hrs`;
         document.getElementById('work-previous').innerHTML = `Last Week = ${category.timeslot["previous"]}hrs`;
         return;
       }
       if(category.title === 'Play'){
-        console.log(category.timeslot)
         document.getElementById('play-current').innerHTML = `${category.timeslot["current"]}hrs`;
         document.getElementById('play-previous').innerHTML = `Last Week = ${category.timeslot["previous"]}hrs`;
         return;
       }
       if(category.title === 'Study'){
-        console.log(category.timeslot)
         document.getElementById('study-current').innerHTML = `${category.timeslot["current"]}hrs`;
         document.getElementById('study-previous').innerHTML = `Last Week = ${category.timeslot["previous"]}hrs`;
         return;
       }
       if(category.title === 'Exercise'){
-        console.log(category.timeslot)
         document.getElementById('exercise-current').innerHTML = `${category.timeslot["current"]}hrs`;
         document.getElementById('exercise-previous').innerHTML = `Last Week = ${category.timeslot["previous"]}hrs`;
         return;
       }
       if(category.title === 'Social'){
-        console.log(category.timeslot)
         document.getElementById('social-current').innerHTML = `${category.timeslot["current"]}hrs`;
         document.getElementById('social-previous').innerHTML = `Last Week = ${category.timeslot["previous"]}hrs`;
         return;
       }
       if(category.title === 'Self Care'){
-        console.log(category.timeslot)
         document.getElementById('selfcare-current').innerHTML = `${category.timeslot["current"]}hrs`;
         document.getElementById('selfcare-previous').innerHTML = `Last Week = ${category.timeslot["previous"]}hrs`;
         return;
       }
-
     })
+    
   }
-  // TODO: function that highlight the current time frame button
+
+  // function that highlight the current time frame button
+  const highlightTimeFrame = (timeframe) => {
+    const timeframes = document.getElementsByClassName("time__button-style");
+    Array.from(timeframes).forEach(function (format){
+      if((format.innerHTML).toLowerCase() === timeframe){
+        format.classList.add("time--highlight");
+      }else {
+        format.classList.remove("time--highlight");
+      }
+    });
+  }
 </script>
 </html>
