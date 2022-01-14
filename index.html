@@ -107,13 +107,18 @@
 </body>
 <script>
   let currentTimeFrame = "weekly"
+  let appData = [];
   
   const updateDashboards = (timeframe) => {
-    //Update the format button's styling
+    // Update the format button's styling
     highlightTimeFrame(timeframe); 
 
     // Update the data in the UI
-    updateData(timeframe);
+    if(appData.length > 0){
+      updatePage(appData);
+    }else{
+      updateData(timeframe);
+    }
   }
   
   const updateData = (timeframe) => {
@@ -133,6 +138,7 @@
       newDashboardDataPoint = {};
     });
     
+    appData = newDashboardArray; // saves the data for later
     updatePage(newDashboardArray, timeframe);    
   }
 
