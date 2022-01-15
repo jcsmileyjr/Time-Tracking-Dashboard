@@ -141,32 +141,32 @@
     data.forEach((category)=> {
       if(category.title === 'Work'){
         document.getElementById('work-current').innerHTML = `${category.timeslot["current"]}hrs`;
-        document.getElementById('work-previous').innerHTML = `Last Week = ${category.timeslot["previous"]}hrs`;
+        document.getElementById('work-previous').innerHTML = `Last Week - ${category.timeslot["previous"]}hrs`;
         return;
       }
       if(category.title === 'Play'){
         document.getElementById('play-current').innerHTML = `${category.timeslot["current"]}hrs`;
-        document.getElementById('play-previous').innerHTML = `Last Week = ${category.timeslot["previous"]}hrs`;
+        document.getElementById('play-previous').innerHTML = `Last Week - ${category.timeslot["previous"]}hrs`;
         return;
       }
       if(category.title === 'Study'){
         document.getElementById('study-current').innerHTML = `${category.timeslot["current"]}hrs`;
-        document.getElementById('study-previous').innerHTML = `Last Week = ${category.timeslot["previous"]}hrs`;
+        document.getElementById('study-previous').innerHTML = `Last Week - ${category.timeslot["previous"]}hrs`;
         return;
       }
       if(category.title === 'Exercise'){
         document.getElementById('exercise-current').innerHTML = `${category.timeslot["current"]}hrs`;
-        document.getElementById('exercise-previous').innerHTML = `Last Week = ${category.timeslot["previous"]}hrs`;
+        document.getElementById('exercise-previous').innerHTML = `Last Week - ${category.timeslot["previous"]}hrs`;
         return;
       }
       if(category.title === 'Social'){
         document.getElementById('social-current').innerHTML = `${category.timeslot["current"]}hrs`;
-        document.getElementById('social-previous').innerHTML = `Last Week = ${category.timeslot["previous"]}hrs`;
+        document.getElementById('social-previous').innerHTML = `Last Week - ${category.timeslot["previous"]}hrs`;
         return;
       }
       if(category.title === 'Self Care'){
         document.getElementById('selfcare-current').innerHTML = `${category.timeslot["current"]}hrs`;
-        document.getElementById('selfcare-previous').innerHTML = `Last Week = ${category.timeslot["previous"]}hrs`;
+        document.getElementById('selfcare-previous').innerHTML = `Last Week - ${category.timeslot["previous"]}hrs`;
         return;
       }
     })
