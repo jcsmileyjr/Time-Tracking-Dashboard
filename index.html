@@ -133,40 +133,49 @@
       newDashboardDataPoint = {};
     });
     
-    updatePage(newDashboardArray);    
+    updatePage(newDashboardArray, timeframe);    
   }
 
   // function that update each dashboards two different time data points with format "data hrs"
-  const updatePage = (data) => {
+  const updatePage = (data, timeframe) => {
+    let newMessage = "";
+    if(timeframe === 'daily'){
+      newMessage = 'Yesterday';
+    }else if(timeframe === 'weekly'){
+      newMessage = 'Last Week';
+    }else {
+      newMessage = "Last Month";
+    }
+    
     data.forEach((category)=> {
       if(category.title === 'Work'){
         document.getElementById('work-current').innerHTML = `${category.timeslot["current"]}hrs`;
-        document.getElementById('work-previous').innerHTML = `Last Week - ${category.timeslot["previous"]}hrs`;
+        document.getElementById('work-previous').innerHTML = `${newMessage} - ${category.timeslot["previous"]}hrs`;
         return;
       }
       if(category.title === 'Play'){
         document.getElementById('play-current').innerHTML = `${category.timeslot["current"]}hrs`;
-        document.getElementById('play-previous').innerHTML = `Last Week - ${category.timeslot["previous"]}hrs`;
+        document.getElementById('play-previous').innerHTML = `${newMessage} - ${category.timeslot["previous"]}hrs`;
         return;
       }
       if(category.title === 'Study'){
         document.getElementById('study-current').innerHTML = `${category.timeslot["current"]}hrs`;
-        document.getElementById('study-previous').innerHTML = `Last Week - ${category.timeslot["previous"]}hrs`;
+        document.getElementById('study-previous').innerHTML = `${newMessage} - ${category.timeslot["previous"]}hrs`;
         return;
       }
       if(category.title === 'Exercise'){
         document.getElementById('exercise-current').innerHTML = `${category.timeslot["current"]}hrs`;
-        document.getElementById('exercise-previous').innerHTML = `Last Week - ${category.timeslot["previous"]}hrs`;
+        document.getElementById('exercise-previous').innerHTML = `${newMessage} - ${category.timeslot["previous"]}hrs`;
         return;
       }
       if(category.title === 'Social'){
         document.getElementById('social-current').innerHTML = `${category.timeslot["current"]}hrs`;
-        document.getElementById('social-previous').innerHTML = `Last Week - ${category.timeslot["previous"]}hrs`;
+        document.getElementById('social-previous').innerHTML = `${newMessage} - ${category.timeslot["previous"]}hrs`;
         return;
       }
       if(category.title === 'Self Care'){
         document.getElementById('selfcare-current').innerHTML = `${category.timeslot["current"]}hrs`;
-        document.getElementById('selfcare-previous').innerHTML = `Last Week - ${category.timeslot["previous"]}hrs`;
+        document.getElementById('selfcare-previous').innerHTML = `${newMessage} - ${category.timeslot["previous"]}hrs`;
         return;
       }
     })
