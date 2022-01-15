@@ -54,12 +54,12 @@ main {
 h2 {
   margin-bottom: 0;
   font-size: 1.125rem;
-  color: var(--Neutral-Pale-Blue);
+  color: white;
 }
 
 .hours {
   font-size: 1.125rem;
-  color: var(--Neutral-Pale-Blue);
+  color: white;
 }
 
 p {
@@ -136,7 +136,7 @@ p {
 }
 
 .name__bottom--style {
-  color: var(--Neutral-Pale-Blue);
+  color: white;
   margin-top: 0;
   font-size: 1.125rem;
 }
@@ -163,7 +163,7 @@ p {
 }
 
 .time--highlight {
-  color: var(--Neutral-Pale-Blue);
+  color: white;
   cursor: pointer;
 }
 .work {
