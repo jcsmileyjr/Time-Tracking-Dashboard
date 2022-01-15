@@ -15,7 +15,7 @@ This is a solution to the [Frontent Mentor](https://www.frontendmentor.io) Time 
 ### Links
 
 - [Click to play with the Live site](https://jcsmileyjr.github.io/Time-Tracking-Dashboard/)
-- [Blog post is a Work in Progress]()
+- [Click to read the blog post showing lots of GIFS, images, and detailing the development journey](https://dev.to/jcsmileyjr/frontend-challenge-12-time-tracking-dashboard-jdc)
 
 ### Built with
 
