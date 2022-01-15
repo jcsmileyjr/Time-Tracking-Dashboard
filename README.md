@@ -1,49 +1,33 @@
+# Learn to Code Sign Up Form with HTML, CSS, & JavaScript
 
+![Final Outcome](./images/final-desktop.PNG)
 
+This is a solution to the [Frontent Mentor](https://www.frontendmentor.io) Time Tracking Dashboard challenge. Frontend Mentor provides frontend designs that helps improve coding skills by building realistic projects.
 
-5hrs <!-- daily -->
-Previous - 7hrs <!-- daily -->
-32hrs <!-- weekly -->
-Previous - 36hrs <!-- weekly -->
-103hrs <!-- monthly -->
-Previous - 128hrs <!-- monthly -->
+### The challenge
 
-Play
-1hr <!-- daily -->
-Previous - 2hrs <!-- daily -->
-10hrs <!-- weekly -->
-Previous - 8hrs <!-- weekly -->
-23hrs <!-- monthly -->
-Previous - 29hrs <!-- monthly -->
+- Build out the project to the designs provided.
 
-Study
-0hrs <!-- daily -->
-Previous - 1hr <!-- daily -->
-4hrs <!-- weekly -->
-Previous - 7hrs <!-- weekly -->
-13hrs <!-- monthly -->
-Previous - 19hrs <!-- monthly -->
+### Final Outcome
+![GIF of data changes](./images/dashboard-phase-8.gif)
+![GIF of data changes](./images/dashboard-phase-6.gif)
 
-Exercise
-1hr <!-- daily -->
-Previous - 1hr <!-- daily -->
-4hrs <!-- weekly -->
-Previous - 5hrs <!-- weekly -->
-11hrs <!-- monthly -->
-Previous - 18hrs <!-- monthly -->
+### Links
 
-Social
-1hr <!-- daily -->
-Previous - 3hrs <!-- daily -->
-5hrs <!-- weekly -->
-Previous - 10hrs <!-- weekly -->
-21hrs <!-- monthly -->
-Previous - 23hrs <!-- monthly -->
+- [Click to play with the Live site](https://jcsmileyjr.github.io/Time-Tracking-Dashboard/)
+- [Blog post is a Work in Progress]()
 
-Self Care
-0hrs <!-- daily -->
-Previous - 1hr <!-- daily -->
-2hrs <!-- weekly -->
-Previous - 2hrs <!-- weekly -->
-7hrs <!-- monthly -->
-Previous - 11hrs <!-- monthly -->
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- CSS Grid
+- Mobile-first workflow
+- Javascript functionality like the Fetch API to grab data from a JSON
+- 
+
+## Author
+
+- Website - [JC Smiley](https://www.jcsmileyjr.com)
+- Frontend Mentor - [@jcsmileyjr](https://www.frontendmentor.io/profile/jcsmileyjr)
+- Twitter - [@JCSmiley4](https://twitter.com/JCSmiley4)
