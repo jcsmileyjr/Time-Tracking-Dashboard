@@ -1,10 +1,8 @@
 let currentTimeFrame = "weekly"
   
+// When a timeframe's button is press, the style and data in the dashboards is update
 const updateDashboards = (timeframe) => {
-  // Update the format button's styling
   highlightTimeFrame(timeframe); 
-
-  // Update the data in the UI
   updateData(timeframe);      
 }
 
@@ -38,39 +36,24 @@ const updatePage = (data, timeframe) => {
   }else {
     newMessage = "Last Month";
   }
-  
+
+  const listOfcategories = ["work", "play", "study", "exercise", "social", "self care"];
   data.forEach((category)=> {
-    if(category.title === 'Work'){
-      document.getElementById('work-current').innerHTML = `${category.timeslot["current"]}hrs`;
-      document.getElementById('work-previous').innerHTML = `${newMessage} - ${category.timeslot["previous"]}hrs`;
-      return;
-    }
-    if(category.title === 'Play'){
-      document.getElementById('play-current').innerHTML = `${category.timeslot["current"]}hrs`;
-      document.getElementById('play-previous').innerHTML = `${newMessage} - ${category.timeslot["previous"]}hrs`;
-      return;
-    }
-    if(category.title === 'Study'){
-      document.getElementById('study-current').innerHTML = `${category.timeslot["current"]}hrs`;
-      document.getElementById('study-previous').innerHTML = `${newMessage} - ${category.timeslot["previous"]}hrs`;
-      return;
-    }
-    if(category.title === 'Exercise'){
-      document.getElementById('exercise-current').innerHTML = `${category.timeslot["current"]}hrs`;
-      document.getElementById('exercise-previous').innerHTML = `${newMessage} - ${category.timeslot["previous"]}hrs`;
-      return;
-    }
-    if(category.title === 'Social'){
-      document.getElementById('social-current').innerHTML = `${category.timeslot["current"]}hrs`;
-      document.getElementById('social-previous').innerHTML = `${newMessage} - ${category.timeslot["previous"]}hrs`;
-      return;
-    }
-    if(category.title === 'Self Care'){
-      document.getElementById('selfcare-current').innerHTML = `${category.timeslot["current"]}hrs`;
-      document.getElementById('selfcare-previous').innerHTML = `${newMessage} - ${category.timeslot["previous"]}hrs`;
-      return;
-    }
-  })
+    listOfcategories.forEach( word => {
+      if(category.title === "Self Care"){
+        document.getElementById(`selfcare-current`).innerHTML = `${category.timeslot["current"]}hrs`;
+        document.getElementById(`selfcare-previous`).innerHTML = `${newMessage} - ${category.timeslot["previous"]}hrs`;
+        return;
+      }
+
+      if((category.title).toLowerCase() === word){ 
+        console.log(`${word}-current`)       
+        document.getElementById(`${word}-current`).innerHTML = `${category.timeslot["current"]}hrs`;
+        document.getElementById(`${word}-previous`).innerHTML = `${newMessage} - ${category.timeslot["previous"]}hrs`;
+        return;               
+      }
+    })
+  });
   
 }
 
@@ -85,3 +68,17 @@ const highlightTimeFrame = (timeframe) => {
     }
   });
 }
+
+// Allow the  user to click the timeframe buttons and update dashboard's data
+const userClick = () => {
+  const buttons = document.getElementsByClassName("time__button-style");
+  Array.from(buttons).forEach(function (button){
+    button.addEventListener('click', function() {
+      console.log("it got click")
+      updateDashboards((button.innerHTML).toLowerCase());
+    })
+  });
+
+}
+
+userClick();
