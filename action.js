@@ -40,16 +40,10 @@ const updatePage = (data, timeframe) => {
   const listOfcategories = ["work", "play", "study", "exercise", "social", "self care"];
   data.forEach((category)=> {
     listOfcategories.forEach( word => {
-      if(category.title === "Self Care"){
-        document.getElementById(`selfcare-current`).innerHTML = `${category.timeslot["current"]}hrs`;
-        document.getElementById(`selfcare-previous`).innerHTML = `${newMessage} - ${category.timeslot["previous"]}hrs`;
-        return;
-      }
-
       if((category.title).toLowerCase() === word){ 
-        console.log(`${word}-current`)       
-        document.getElementById(`${word}-current`).innerHTML = `${category.timeslot["current"]}hrs`;
-        document.getElementById(`${word}-previous`).innerHTML = `${newMessage} - ${category.timeslot["previous"]}hrs`;
+        // Use a regular expression to remove any empty space     
+        document.getElementById(`${word.replace(/ +/g, '')}-current`).innerHTML = `${category.timeslot["current"]}hrs`;
+        document.getElementById(`${word.replace(/ +/g, '')}-previous`).innerHTML = `${newMessage} - ${category.timeslot["previous"]}hrs`;
         return;               
       }
     })
