@@ -60,15 +60,10 @@ const highlightTimeFrame = (timeframe) => {
   });
 }
 
-// Allow the  user to click the timeframe buttons and update dashboard's data
-const userClick = () => {
-  Array.from(timeframes).forEach(function (button){
-    button.addEventListener('click', function() {
-      console.log("it got click")
-      updateDashboards((button.innerHTML).toLowerCase());
-    })
-  });
+// Initialize the timeframe buttons upon page load to ability to update dashboard's data
+Array.from(timeframes).forEach(function (button){
+  button.addEventListener('click', function() {
+    updateDashboards((button.innerHTML).toLowerCase());
+  })
+});
 
-}
-
-userClick();
