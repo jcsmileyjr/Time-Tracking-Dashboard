@@ -37,16 +37,11 @@ const updatePage = (data, timeframe) => {
     newMessage = "Last Month";
   }
 
-  const listOfcategories = ["work", "play", "study", "exercise", "social", "self care"];
   data.forEach((category)=> {
-    listOfcategories.forEach( word => {
-      if((category.title).toLowerCase() === word){ 
-        // Use a regular expression to remove any empty space     
-        document.getElementById(`${word.replace(/ +/g, '')}-current`).innerHTML = `${category.timeslot["current"]}hrs`;
-        document.getElementById(`${word.replace(/ +/g, '')}-previous`).innerHTML = `${newMessage} - ${category.timeslot["previous"]}hrs`;
-        return;               
-      }
-    })
+        // Use a regular expression to remove any empty space
+        document.getElementById(`${(category.title).toLowerCase().replace(/ +/g, '')}-current`).innerHTML = `${category.timeslot["current"]}hrs`;
+        document.getElementById(`${(category.title).toLowerCase().replace(/ +/g, '')}-previous`).innerHTML = `${newMessage} - ${category.timeslot["previous"]}hrs`;
+        return; 
   });
   
 }
