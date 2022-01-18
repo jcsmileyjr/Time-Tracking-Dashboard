@@ -28,19 +28,16 @@ const distillData = (data, timeframe) => {
 
 // function that update each dashboards two different time data points with format "data hrs"
 const updatePage = (data, timeframe) => {
-  let newMessage = "";
-  if(timeframe === 'daily'){
-    newMessage = 'Yesterday';
-  }else if(timeframe === 'weekly'){
-    newMessage = 'Last Week';
-  }else {
-    newMessage = "Last Month";
+  const message = {
+    "daily": 'Yesterday',
+    "weekly":"Last Week",
+    "monthly":"Last Month"
   }
 
   data.forEach((category)=> {
         // Use a regular expression to remove any empty space
         document.getElementById(`${(category.title).toLowerCase().replace(/ +/g, '')}-current`).innerHTML = `${category.timeslot["current"]}hrs`;
-        document.getElementById(`${(category.title).toLowerCase().replace(/ +/g, '')}-previous`).innerHTML = `${newMessage} - ${category.timeslot["previous"]}hrs`;
+        document.getElementById(`${(category.title).toLowerCase().replace(/ +/g, '')}-previous`).innerHTML = `${message[timeframe]} - ${category.timeslot["previous"]}hrs`;
         return; 
   });
   
