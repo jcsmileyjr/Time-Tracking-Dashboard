@@ -46,9 +46,11 @@ const updatePage = (data, timeframe) => {
   
 }
 
+// Array of buttons that the user clicks to change the time frames of the dashboards
+const timeframes = document.getElementsByClassName("time__button-style");
+
 // function that highlight the current time frame button
 const highlightTimeFrame = (timeframe) => {
-  const timeframes = document.getElementsByClassName("time__button-style");
   Array.from(timeframes).forEach(function (format){
     if((format.innerHTML).toLowerCase() === timeframe){
       format.classList.add("time--highlight");
@@ -60,8 +62,7 @@ const highlightTimeFrame = (timeframe) => {
 
 // Allow the  user to click the timeframe buttons and update dashboard's data
 const userClick = () => {
-  const buttons = document.getElementsByClassName("time__button-style");
-  Array.from(buttons).forEach(function (button){
+  Array.from(timeframes).forEach(function (button){
     button.addEventListener('click', function() {
       console.log("it got click")
       updateDashboards((button.innerHTML).toLowerCase());
