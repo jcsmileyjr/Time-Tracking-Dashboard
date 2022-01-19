@@ -1,9 +1,15 @@
 let currentTimeFrame = "weekly"
+let globalData = [];
   
 // When a timeframe's button is press, the style and data in the dashboards is update
 const updateDashboards = (timeframe) => {
   highlightTimeFrame(timeframe); 
-  updateData(timeframe);      
+
+  if(globalData.length > 0){
+    updatePage(globalData, timeframe);
+  }else{
+    updateData(timeframe); 
+  }
 }
 
 const updateData = (timeframe) => {
@@ -23,11 +29,15 @@ const distillData = (data, timeframe) => {
     newDashboardDataPoint = {};
   });
   
-  updatePage(newDashboardArray, timeframe);    
+  updatePage(newDashboardArray, timeframe); 
 }
 
 // function that update each dashboards two different time data points with format "data hrs"
 const updatePage = (data, timeframe) => {
+  if(globalData.length === 0){
+    globalData = data;       
+  }
+  
   const message = {
     "daily": 'Yesterday',
     "weekly":"Last Week",
