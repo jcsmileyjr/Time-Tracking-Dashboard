@@ -1,4 +1,4 @@
-# Learn to Code Sign Up Form with HTML, CSS, & JavaScript
+# Time Tracking Dashboard with HTML, CSS, & JavaScript
 
 ![Final Outcome](./images/final-desktop.PNG)
 
